@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Variable Example</title>
+    <script>
+        // Define an empty dictionary object to store word meanings
+var dictionary = {};
+
+// Function to add a word and its meaning to the dictionary
+function addWord() {
+    var word = prompt("Enter the word:");
+    var meaning = prompt("Enter the meaning of '" + word + "':");
+    dictionary[word] = meaning;
+}
+
+// Function to look up the meaning of a word
+function lookupWord() {
+    var word = prompt("Enter the word to look up:");
+    if (dictionary[word]) {
+        alert("Meaning of '" + word + "': " + dictionary[word]);
+    } else {
+        alert("Word not found in the dictionary.");
+    }
+}
+
+// Adding 5 words and their meanings to the dictionary
+for (var i = 0; i < 5; i++) {
+    addWord();
+}
+
+// Looking up the meaning of a word
+lookupWord();
+
+    </script>
+</head>
+<body>
+    <h1>Local Variable Example</h1>
+    <button onclick="myFunction()">Click me</button>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css">
+    <script type="text/javascript">
+      function submitForm(event) {
+        event.preventDefault();
+        let name = document.getElementById("name").value;
+        if (name === "") {
+          document.getElementById("name_valid").innerHTML =
+            "Please Enter Your Name";
+        }
+
+        let password = document.getElementById("password").value;
+        let confirm_password = document.getElementById("confirm_password").value;
+
+        if(password === ""){
+          document.getElementById("password_valid").innerHTML = "Please Enter Your Password";
+        }
+        else if(password.length < 8){
+          document.getElementById("password_valid").innerHTML = "Password must be at least 8 characters long";
+        }
+        else if(password !== confirm_password){
+          document.getElementById("password_valid").innerHTML = "Password and Confirm Password must be same";
+        }
+        if(confirm_password == ""){
+            document.getElementById("confirm_password_valid").innerHTML = "Please Enter Your Confirm Password";
+            }
+        }
+    </script>
+
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <form onsubmit="submitForm(event)" method="post">
+      <div class="name">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" />
+        <p id="name_valid"></p>
+      </div>
+
+      <div class="password">
+        <label for="password">Your Password:</label>
+        <input type="password" name="password" id="password" />
+        <h2 id="password_valid"></h2>
+      </div>
+
+      <div class="confirm_password">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password" />
+        <h2 id="confirm_password_valid"></h2>
+      </div>
+
+      <div class="email">
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email" />
+        <h2 id="email_valid"></h2>
+      </div>
+        <div class="submit">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>

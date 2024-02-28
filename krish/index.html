@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+<style>
+.container {
+align-items: center;
+width: 30%;
+margin: auto;
+}
+.heading {
+text-align: center;
+font-size: 30px;
+}
+.inp {
+width: 100%;
+height: 30px;
+margin-bottom: 50px;
+}
+.circle {
+background-color: orangered;
+height: 300px;
+width: 300px;
+border-radius: 150px;
+margin: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.count {
+color: white;
+font-size: 100px;
+}
+</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<div class="container">
+<p class="heading">jQuery advanced selectors</p>
+<input type="text" name="inp" class="inp" placeholder="Enter Some Text" />
+<div class="circle">
+<p class="count">0</p>
+</div>
+</div>
+<script>
+$(document).ready(function () {
+$(".inp").on("input", function () {
+var inputString = $(this).val();
+var charCount = inputString.length;
+
+$(".count").text(charCount);
+$(".circle").css(back)
+});
+$('.inp').on('keyup keydown', function() {
+var randomColor = getRandomColor();
+$('.circle').css('background-color', randomColor);
+
+});
+});
+
+
+function getRandomColor() {
+var letters = '0123456789ABCDEF';
+var color = '#';
+for (var i = 0; i < 6; i++) color += letters[Math.floor(Math.random() * 16)];
+return color;
+}
+</script>
+</body>
+</html>
